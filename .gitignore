@@ -39,3 +39,8 @@ docker-compose.yml
 *.swo
 .idea/
 .vscode/
+
+# personal
+/infra/conf/
+/notebook/data/
+notebook/.ipynb_checkpoints/
