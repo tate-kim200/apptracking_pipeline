@@ -1,0 +1,33 @@
+version: '3.7'
+services:
+  jupyterlab:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "8888:8888"
+    volumes:
+      - ../notebook:/home/jovyan/work
+    env_file:
+      - ../.env
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - GRANT_SUDO=yes
+    command: start-notebook.sh --NotebookApp.token=''
+#  zeppelin-server:
+#    hostname: zeppelin
+#    container_name: zeppelin
+#    image: apache/zeppelin:0.11.2
+#    platform: linux/amd64
+#    ports:
+#      - "8080:8080"
+#    environment:
+#      ZEPPELIN_PORT: 8080
+#      ZEPPELIN_MEM: -Xmx1024m -XX:MaxMetaspaceSize=512m
+#      ZEPPELIN_LOG_DIR: '/logs'
+#      ZEPPELIN_NOTEBOOK_DIR: '/notebook'
+#      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+#      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+#    volumes:
+#      - ../notebook:/notebook
+#      - ../logs:/logs
