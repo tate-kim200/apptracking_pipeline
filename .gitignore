@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Spark
+*.jar
+*.class
+*.log
+spark-warehouse/
+metastore_db/
+
+# Airflow
+airflow.cfg
+*.db
+
+# Docker
+*.env
+Dockerfile
+docker-compose.yml
+
+# AWS
+*.pem
+*.key
+.aws/
+.credentials/
+
+# 기타
+.DS_Store
+*.log
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# personal
+/infra/conf/
+/notebook/data/
+notebook/.ipynb_checkpoints/
